@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [country, setCountry] = useState([])
+
+  const dividedCounty = country.slice(0,20);
+          console.log(dividedCounty);
+
+   useEffect(() => {
+      fetch('https://restcountries.com/v3.1/all')
+      .then(response => response.json())
+      .then(data => {
+        setCountry(data)
+      })
+      .catch(error =>console.log(error))
+   }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello</h1>
+      <ul>
+      {
+        dividedCounty.map(country => <li>{country.name.common}</li>)
+      }
+      </ul>
+      
     </div>
   );
 }
