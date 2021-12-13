@@ -41,7 +41,7 @@ function App() {
         dividedCounty.map(country => <Country 
           country={country}
           CountryClick ={CountryClick} 
-          key={country.population}
+          // key={country.population}
           ></Country>)
           
       }
