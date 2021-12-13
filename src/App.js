@@ -6,8 +6,8 @@ import Cart from './component/Cart/Cart';
 function App() {
   const [country, setCountry] = useState([])
   const [singleCountry, setSingleCountry] = useState([]);
-
-  const dividedCounty = country.slice(0,20);
+      
+  const dividedCounty = country.slice(0,250);
 
 
           const CountryClick = (country) =>{
@@ -31,11 +31,11 @@ function App() {
     <div className="App">
       <h1>Hello</h1>
       <h3>Total Country: {dividedCounty.length}</h3>
+     
+      <Cart singleCountry={singleCountry}></Cart>
       <div>
         <h3>New Country Added: {singleCountry.length}</h3>
-        {
-      singleCountry.map(cart =>  <Cart cart={cart}></Cart>)
-       }
+       
       </div>
       {
         dividedCounty.map(country => <Country 
@@ -43,9 +43,8 @@ function App() {
           CountryClick ={CountryClick} 
           key={country.population}
           ></Country>)
+          
       }
-    
-   
       
     </div>
   );

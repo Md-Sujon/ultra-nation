@@ -1,19 +1,22 @@
 import React from 'react';
 
 const Cart = (props) => {
-    console.log(props.cart);
-    let newCountry = props.cart;
+    console.log(props.singleCountry);
+    const cart = props.singleCountry;
+    console.log(cart);
 
     // let total = 0;
-    // let totalPopolation =newCountry.reduce((totalPopolation, country)=>totalPopolation+country.population, 0)
-    // for (let i = 0; i < newCountry.length; i++) {
-    //     const country = newCountry[i];
-    //     total = country + country.population;
+    // for (let i = 0; i < cart.length; i++) {
+    //     const country = cart[i];
+    //     total = total + country.population;
     // }
+const totalpopulation = cart.reduce((i, country) => i + country.population,0);
+
     return (
         <div>
-            <h1>{newCountry.population}</h1>
-           <h2>Name: {props.cart.name.common}</h2> 
+            <h6>Total Population: {totalpopulation}</h6>
+            <h1>{cart.population}</h1>
+           {/* <h2>Name: {cart.name.common}</h2>  */}
         </div>
     );
 };

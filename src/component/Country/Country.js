@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
 const Cart = (props) => {
     const {name,population,flags,region,languages} = props.country;
@@ -23,7 +25,8 @@ const Cart = (props) => {
             <img src={flags.png} alt="" />
             <h3>Population: {population}</h3>
             <p><small>Region: {region}</small></p>
-            <button style={buttonStyle} onClick={() => CountryClick(props.country)}>Click Me</button>
+            <button style={buttonStyle} onClick={() => CountryClick(props.country)}><FontAwesomeIcon icon={faPlusSquare} /> Click Me</button>
+           
             
         </div>
     );
