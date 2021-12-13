@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
 const Cart = (props) => {
-    const {name,population,flags,region,languages} = props.country;
+    const {name,population,flags,region} = props.country;
     const CountryClick = props.CountryClick;
 
 
