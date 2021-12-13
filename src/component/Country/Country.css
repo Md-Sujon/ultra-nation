@@ -1,0 +1,7 @@
+.flag{
+    width:200px;
+    height:100px;
+}
+.card-container{
+    display: inline-block;
+}

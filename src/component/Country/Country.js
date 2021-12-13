@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
+import './Country.css';
 
 const Cart = (props) => {
     const {name,population,flags,region} = props.country;
@@ -9,10 +10,11 @@ const Cart = (props) => {
 
     const styleCountry = {
         border: '3px solid red',
-        height:'450px',
+        width: '500px',
+        height:'370px',
         margin: '5px',
         borderRadius: '1000px',
-        backgroundColor: 'lightGray'
+        backgroundColor: 'lightGray',
     }
 
     const buttonStyle = {
@@ -20,14 +22,15 @@ const Cart = (props) => {
 
     }
     return (
-        <div style={styleCountry}>
+        <div className="card-container">
+            <div style={styleCountry}>
             <h1>Name: {name.common}</h1> 
-            <img src={flags.png} alt="" />
+            <img className="flag" src={flags.png} alt="" />
             <h3>Population: {population}</h3>
             <p><small>Region: {region}</small></p>
             <button style={buttonStyle} onClick={() => CountryClick(props.country)}><FontAwesomeIcon icon={faPlusSquare} /> Click Me</button>
-           
-            
+
+        </div>
         </div>
     );
 };
